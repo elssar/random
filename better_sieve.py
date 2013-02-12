@@ -28,7 +28,7 @@ def is_prime(n):
 	return False
 
 if __name__=='__main__':
-	print '1. Print Sieve, 2. Check primalarity :(Option Number)'
+	print '1. Print Sieve, 2. Check primalarity, 3. Sum :(Option Number)'
 	c= raw_input()
 	inp= c.split()
 	try:
@@ -43,6 +43,11 @@ if __name__=='__main__':
 				print is_prime(int(inp[1]))
 			else:
 				raise Exception('Incorrect input')
+		elif inp[0]=='3':
+		    if inp[1].isdigit():
+		        print sum(better_sieve(int(inp[1])))
+		    else:
+		        raise Exception('Incorrect input')
 		else:
 			raise Exception('Incorrect input')
 	except:

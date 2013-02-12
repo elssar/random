@@ -5,10 +5,7 @@
 def shift_cipher(plain_text, shift_coeff):
 	cipher_text= ''
 	for c in plain_text:
-		if 32==ord(c):
-			cipher_text+= c
-			continue
-		cipher_text+= chr(65+ (ord(c)-65+shift_coeff%26)%26)
+		cipher_text+= 32 if ord(c)==32 else chr(65+ (ord(c)-65+shift_coeff%26)%26)
 	return cipher_text
 
 if __name__=='__main__':
